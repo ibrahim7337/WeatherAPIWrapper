@@ -13,10 +13,10 @@ class WeatherService
     public function __construct($city)
     {
         $this->city = $city;
-        $this->apiKey = 'DRXYHMJ3E8LVK8UZ7CTCRTRTL';
-        $this->baseUrl = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
-        $this->unit = "us";
-        $this->contentType = "json";
+        $this->apiKey = getenv('WEATHER_API_KEY');
+        $this->baseUrl = getenv('WEATHER_API_BASE');
+        $this->unit = getenv('WEATHER_UNIT');
+        $this->contentType = getenv('WEATHER_CONTENT_TYPE');
     }
 
     public function fetchWeather()

@@ -1,6 +1,9 @@
 <?php
+require_once __DIR__ . "/helpers.php";
 require_once __DIR__ . "/RedisCache.php";
 require_once __DIR__ . "/WeatherService.php";
+
+loadEnv(__DIR__ . "/.env");
 
 $city = $_GET['city'] ?? "cairo";
 $cacheKey = "weather:$city";
